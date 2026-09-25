@@ -97,6 +97,18 @@ NODE_ENV=production node index.js
 
 Express will serve the static `client/dist/` and handle SPA routing via a catch-all.
 
+## Deploy to Vercel
+
+This repository includes a root `vercel.json` for a single Vercel project. It builds the Vite client and exposes the Express API through `/api/*` serverless functions.
+
+1. Push the repository to GitHub, GitLab, or Bitbucket.
+2. In Vercel, choose **Add New → Project**, import the repository, and keep the project root at the repository root.
+3. Deploy with the settings from `vercel.json`.
+
+The deployed site will be available at the Vercel URL. Check the API with `/api/health`.
+
+The contact endpoint currently logs messages in the function logs and does not persist submissions. Use a database or email provider before relying on it in production.
+
 ---
 
 ## Customization

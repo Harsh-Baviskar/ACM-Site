@@ -56,4 +56,8 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (_req, res) => res.sendFile(path.join(__dirname, '../client/dist/index.html')));
 }
 
-app.listen(PORT, () => console.log(`ACM API running on http://localhost:${PORT}`));
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`ACM API running on http://localhost:${PORT}`));
+}
+
+module.exports = app;
