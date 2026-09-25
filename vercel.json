@@ -2,6 +2,6 @@
   "version": 2,
   "framework": "vite",
   "installCommand": "cd client && npm install",
-  "buildCommand": "cd client && npm run build",
+  "buildCommand": "cd client && node node_modules/vite/bin/vite.js build",
   "outputDirectory": "client/dist"
 }
